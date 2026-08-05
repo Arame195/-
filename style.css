@@ -283,12 +283,26 @@ section{ position: relative; }
   display:flex; flex-direction: column; align-items:center; justify-content:center;
   text-align:center;
   padding: 6rem 1.5rem 4rem;
-  background-image: url("images/fon-image.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   overflow: hidden;
 }
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:-20px;
+
+  background-image:url("images/fon-image.webp");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+
+  filter: blur(3px);
+
+  transform: scale(1.05);
+
+  z-index:0;
+}
+
 .hero-flora{
   position:absolute; inset:0;
   opacity:.5;
@@ -840,4 +854,30 @@ footer{
 .visually-hidden{
   position:absolute; width:1px;height:1px; overflow:hidden;
   clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+.act-two {
+    position: relative;
+    overflow: hidden;
+}
+
+.disco-wrap {
+    position: relative;
+
+    width: 350px;
+    height: 350px;
+
+    margin: -100px auto -70px;
+
+    z-index: 2;
+    pointer-events:none;
+}
+
+#disco {
+    width:100%;
+    height:100%;
+}
+
+#disco canvas {
+    display:block;
 }

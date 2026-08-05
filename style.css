@@ -196,7 +196,7 @@ section{ position: relative; }
   font-size: 0.95rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: white;
 }
 .eyebrow::before, .eyebrow::after{
   content:'';
@@ -283,9 +283,10 @@ section{ position: relative; }
   display:flex; flex-direction: column; align-items:center; justify-content:center;
   text-align:center;
   padding: 6rem 1.5rem 4rem;
-  background:
-    radial-gradient(ellipse at 50% -10%, rgba(217,189,140,.35), transparent 60%),
-    linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+  background-image: url("images/fon-image.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 .hero-flora{
@@ -293,8 +294,14 @@ section{ position: relative; }
   opacity:.5;
   pointer-events:none;
 }
+
+.hero-inner span {
+  color: white;
+  font-weight: 800;
+}
+
 .hero-inner{ position:relative; z-index:2; max-width: 640px; }
-.hero-inner .eyebrow{ justify-content:center; margin-bottom: 1.6rem; opacity:0; }
+.hero-inner .eyebrow{ justify-content:center; margin-bottom: 1.6rem; opacity:0; color: white; }
 .hero-names{
   font-size: clamp(2.6rem, 9vw, 4.6rem);
   line-height: 1.05;
@@ -305,6 +312,7 @@ section{ position: relative; }
   font-size: 0.62em;
   color: var(--gold);
   margin: .05em 0;
+  color: white;
 }
 .hero-names span{ opacity:0; }
 .hero-date{
@@ -313,6 +321,8 @@ section{ position: relative; }
   letter-spacing: .08em;
   color: var(--ink-soft);
   opacity:0;
+  color: white;
+  font-weight: 800;
 }
 .hero-sub{
   margin-top: .6rem;
@@ -342,9 +352,14 @@ section{ position: relative; }
    ============================================================ */
 .section{
   padding: clamp(4.5rem, 10vw, 7rem) 0;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(240,200,121,.14), transparent 55%),
+    linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
 }
-.section-cream{ background: var(--cream); }
-.section-paper{ background: var(--paper); }
+
+.h2-rsvp {
+  color: white;
+}
 
 .reveal{ opacity:0; transform: translateY(40px); }
 .reveal-scale{ opacity:0; transform: scale(.92); }
@@ -568,8 +583,11 @@ section{ position: relative; }
    ОБЕЩАНИЕ
    ============================================================ */
 .promise{
+  color: white;
   text-align:center;
-  background: var(--cream-deep);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(240,200,121,.14), transparent 55%),
+    linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
 }
 .promise p{
   font-size: clamp(1.3rem, 3vw, 1.7rem);
@@ -583,17 +601,33 @@ section{ position: relative; }
   font-family: var(--f-body);
   font-style: normal;
   font-size: 1.05rem;
-  color: var(--ink-soft);
+  color: white;
   margin-top: 1.4rem;
 }
 
 /* ============================================================
    RSVP
    ============================================================ */
-.rsvp{ background: var(--paper); }
-.rsvp-head{ text-align:center; max-width: 560px; margin: 0 auto 2.6rem; }
-.rsvp-head .eyebrow{ justify-content:center; margin-bottom: 1.2rem; }
-.rsvp-head p{ color: var(--ink-soft); }
+.rsvp{
+   background:
+    radial-gradient(circle at 80% 90%, rgba(240,200,121,.14), transparent 55%),
+    linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
+}
+
+.rsvp-head{ 
+  text-align:center; 
+  max-width: 560px; 
+  margin: 0 auto 2.6rem; 
+}
+
+.rsvp-head .eyebrow{ 
+  justify-content:center;
+   margin-bottom: 1.2rem; 
+}
+
+.rsvp-head p{ 
+  color: white; 
+}
 
 form.rsvp-form{
   max-width: 560px;
@@ -698,8 +732,8 @@ form.rsvp-form{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center;
   background:
-    radial-gradient(ellipse at 50% 110%, rgba(217,189,140,.4), transparent 60%),
-    linear-gradient(180deg, var(--cream-deep), var(--cream));
+    radial-gradient(circle at 30% 30%, rgba(240,200,121,.14), transparent 55%),
+    linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
   padding: 5rem 1.5rem;
 }
 .final h2{
@@ -733,7 +767,7 @@ footer{
       font-size: 0.9rem;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--wine);
+      color: white;
       text-align: center;
       margin-bottom: 14px;
   }
@@ -741,6 +775,9 @@ footer{
 #gallery {
     overflow: hidden;
     border-radius: 12px;
+    background:
+    radial-gradient(circle at 50%, rgba(240,200,121,.14), transparent 55%),
+    linear-gradient(180deg, var(--wine) 0%, var(--wine-deep) 100%);
 }
 
 #gallery h2 {

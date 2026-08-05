@@ -296,7 +296,7 @@ section{ position: relative; }
   background-repeat:no-repeat;
   background-size:cover;
 
-  filter: blur(3px);
+  filter: blur(1px);
 
   transform: scale(1.05);
 

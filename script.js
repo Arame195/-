@@ -207,10 +207,34 @@ rsvpForm.addEventListener("submit", async function(e){
 
     const drinks = [];
 
-    document.querySelectorAll('input[name="drink"]:checked')
-    .forEach(item => {
+document.querySelectorAll('input[name="drink"]:checked')
+.forEach(item => {
+
+    if(item.value === "strong") {
+
+        const value = document.getElementById("strongInput").value;
+
+        drinks.push(
+            value ? `🥃 Крепкое (${value})` : "🥃 Крепкое"
+        );
+
+    } 
+    else if(item.value === "non-alc") {
+
+        const value = document.getElementById("nonAlcInput").value;
+
+        drinks.push(
+            value ? `🧃 Безалкогольное (${value})` : "🧃 Безалкогольное"
+        );
+
+    }
+    else {
+
         drinks.push(item.value);
-    });
+
+    }
+
+});
 
 
     const data = {

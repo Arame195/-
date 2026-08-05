@@ -738,34 +738,56 @@ footer{
       margin-bottom: 14px;
   }
 
-  #gallery {
-      overflow: hidden;
-      border-radius: 12px;
-  }
+#gallery {
+    overflow: hidden;
+    border-radius: 12px;
+}
 
-  #gallery h2 {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 36px;
-  }
+#gallery h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 36px;
+}
 
-  .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-  }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
 
-  .gallery-grid .photo-slot:first-child {
-      grid-column: 1/3;
-      aspect-ratio: 12/10;
-  }
-
-  .photo-slot img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
+.photo-slot {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
     border-radius: 15px;
-  }
+}
+
+.gallery-grid .photo-slot:first-child {
+    grid-column: 1 / 3;
+    aspect-ratio: 12 / 5;
+}
+
+.photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid .photo-slot:first-child {
+        grid-column: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    #gallery h2 {
+        font-size: 2rem;
+    }
+}
 
 /* ============================================================
    ДЕКОР / фон

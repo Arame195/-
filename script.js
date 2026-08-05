@@ -195,3 +195,81 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach(item => observer.observe(item));
 
 });
+
+const rsvpForm = document.getElementById("rsvpForm");
+
+if (rsvpForm) {
+
+rsvpForm.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+
+    const drinks = [];
+
+    document.querySelectorAll('input[name="drink"]:checked')
+    .forEach(item => {
+        drinks.push(item.value);
+    });
+
+
+    const data = {
+
+        name: document.getElementById("guestName")?.value || "Без имени",
+
+        attendance:
+        document.querySelector('input[name="attendance"]:checked')?.value || "",
+
+        diet1:
+        document.getElementById("diet1").value,
+
+        diet2:
+        document.getElementById("diet2").value,
+
+        drinks: drinks,
+
+        hit:
+        document.getElementById("hit").value
+    };
+
+
+    try {
+
+    const response = await fetch(
+        "https://late-block-315d.rwgjsrz5pk.workers.dev",
+        {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(data)
+        }
+    );
+
+
+    if (!response.ok) {
+        throw new Error("Ошибка отправки");
+    }
+
+
+    document.getElementById("formMsg").style.display="block";
+
+    rsvpForm.reset();
+
+
+} catch(error) {
+
+    alert("Не удалось отправить анкету. Попробуйте ещё раз.");
+
+    console.error(error);
+
+}
+
+
+    document.getElementById("formMsg").style.display="block";
+
+    rsvpForm.reset();
+
+});
+
+}
